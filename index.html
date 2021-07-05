@@ -5,6 +5,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/style.css">
+  <!-- <link rel="stylesheet" href="css/small-devices.css"> -->
+  <link href="//db.onlinewebfonts.com/c/73b2205b7e71a51b4df11d2837ad8185?family=Ailerons" rel="stylesheet" type="text/css"/>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
@@ -15,36 +17,53 @@
 </head>
 <body>
 <nav id="nav-bar">
+  <div class="logo__title">VEN MARTIN&nbsp;
+    <svg class='hexlogo__svg' stroke="currentColor" fill="currentColor" stroke-width="2" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M6 15.2348L12 18.5681L18 15.2348V8.76521L12 5.43188L6 8.76521V15.2348ZM12 2L3 7V17L12 22L21 17V7L12 2Z" fill="currentColor"></path></svg>
+  </div>
   <ul class="nav-list">
-    <li class="nav-item">Home</li>
-    <li class="nav-item">About</li>
-    <li class="nav-item">Projects</li>
-    <li class="nav-item">Contact</li>
+    <li class="nav-item"><a href="#landing__main">Home</a></li>
+    <li class="nav-item"><a href="#about">About</a></li>
+    <li class="nav-item"><a href="#projects">Projects</a></li>
+    <li class="nav-item"><a href="#contact">Contact</a></li>
   </ul>
 </nav>
 
 <section id='landing__main' class='landing'>
-  <div class="ven">
-    <h1 class="venmartin">VEN</h1>
-  </div>
+  <div class="sticky__bg"></div>
+  <div class="landing__container">
+    <div class="ven">
+      <h1 class="venmartin">VEN</h1>
+    </div>
     <div class="martin">
-     <h1 class="venmartin">MARTIN
-       <svg class='hex__svg1' stroke="currentColor" fill="currentColor" stroke-width="2" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M6 15.2348L12 18.5681L18 15.2348V8.76521L12 5.43188L6 8.76521V15.2348ZM12 2L3 7V17L12 22L21 17V7L12 2Z" fill="currentColor"></path></svg>
-       <!-- <svg class='hex__svg2' stroke="currentColor" fill="currentColor" stroke-width="2" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M6 15.2348L12 18.5681L18 15.2348V8.76521L12 5.43188L6 8.76521V15.2348ZM12 2L3 7V17L12 22L21 17V7L12 2Z" fill="currentColor"></path></svg>
-       <svg class='hex__svg3' stroke="currentColor" fill="currentColor" stroke-width="2" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M6 15.2348L12 18.5681L18 15.2348V8.76521L12 5.43188L6 8.76521V15.2348ZM12 2L3 7V17L12 22L21 17V7L12 2Z" fill="currentColor"></path></svg>
-       <svg class='hex__svg4' stroke="currentColor" fill="currentColor" stroke-width="2" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M6 15.2348L12 18.5681L18 15.2348V8.76521L12 5.43188L6 8.76521V15.2348ZM12 2L3 7V17L12 22L21 17V7L12 2Z" fill="currentColor"></path></svg> -->
+      <h1 class="venmartin">MARTIN
+        <svg class='hex__svg1' stroke="currentColor" fill="currentColor" stroke-width="2" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M6 15.2348L12 18.5681L18 15.2348V8.76521L12 5.43188L6 8.76521V15.2348ZM12 2L3 7V17L12 22L21 17V7L12 2Z" fill="currentColor"></path></svg>
       </h1>
     </div>
-  <span class="intro__text">Revolutionizing Code</span>
-  <span class="intro__text">Perhaps, maybe sometime in the future.</span>
-  <span class="intro__text">We'll see...</span>
+    <div class="intro__box">
+      <span class="intro__text">Revolutionizing Code</span>
+      <span class="intro__text">Perhaps, maybe sometime in the future.</span>
+      <span class="intro__text">We'll see...</span>
+    </div>
+  </div>
 </section>
-<section></section>
-<section></section>
+<section id='about'>
+  <div class="about__container">
+    <div class="title__container"></div>
+      <div class="block__line"></div>
+      <h2 class="heading__text">ABOUT</h2>
+         <div class="about__para__container">
+            <p class='about__para'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur facilis dicta similique magnam autem laborum temporibus, id corrupti necessitatibus porro voluptatum quia sit aut natus veritatis ipsa nam culpa itaque?</p>
+         </div>
+         <div class="item__right"></div>
+  </div>
+</section>
+<section id='projects'></section>
+<section id='contact'></section>
 
 
   <!-- Gsap -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.0/gsap.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.0/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.0/CSSRulePlugin.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.0/EaselPlugin.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.0/MotionPathPlugin.js"></script>
@@ -52,6 +71,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.0/TextPlugin.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.0/ScrollToPlugin.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.0/ScrollTrigger.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.0/ScrollTrigger.min.js"></script>
+  
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.0/EasePack.js"></script>
   <!-- Scroll Magic -->
   <script src='js/main.js'></script>
