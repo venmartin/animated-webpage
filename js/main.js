@@ -35,13 +35,15 @@ tl.from('.hex__svg1', {
 
 
 ScrollTrigger.create({
+  // markers: true,
   animation: tl,
   trigger: ".landing",
   pin: true,
   start: "top top",
-  end: "+=4000",
+  end: "+=1000",
   scrub: 1,
   pinSpacing: true
+  
 });
 
 tl.from('.intro__text', {
@@ -57,12 +59,12 @@ tl.from('.intro__text', {
 const aboutTl = gsap.timeline(
   {
   scrollTrigger: {
-    markers: true,
+    // markers: true,
     trigger: "#about",
-    pin: true,
-    start: "top 300",
-    end: "top -=900",
-    scrub: 1,
+    pin: false,
+    start: "top bottom",
+    end: "top top",
+    scrub: true,
     pinSpacing: true,
     
   
@@ -76,31 +78,12 @@ const aboutTl = gsap.timeline(
 );
 aboutTl.from('.block__line', {
   x: -450,
-  delay: "-=2",
+  delay: 5,
   opacity: 0,
   ease: "back",
   // stagger: 3.5
 },
 "+=1");
-
-aboutTl.from('.heading__text', {
-  x: -850,
-  duration: 3.5,
-  delay: 1.5,
-  opacity: 0,
-  ease: "back",
-  // stagger: 3.5
-});
-
-// ScrollTrigger.create({
-//   animation: aboutTl,
-//   trigger: "#about",
-//   pin: true,
-//   start: "top top",
-//   end: "-=500",
-//   scrub: 3,
-//   pinSpacing: true
-// });
 
 
 aboutTl.from('.about__para', {
@@ -119,6 +102,15 @@ aboutTl.from('.about__para', {
   ease: "back",
   stagger: 3.5
 });
+
+ScrollTrigger.create({
+  markers: true,
+  trigger: "#about",
+  start: "top top",
+  end: "bottom top",
+  pin: true
+})
+
 
 
 
