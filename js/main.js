@@ -139,7 +139,15 @@ aboutTl.from('.block__line', {
   duration: 5
   // stagger: 3.5
 },
-"+=1");
+"+=1")
+  .from('.heading__text', {
+    x: -250,
+    opacity: 0,
+    ease: 'back',
+    stagger: 0.5,
+    scrub: 5,
+    duration: 5
+  })
 
 
 aboutTl.from('.about__para', {
@@ -173,7 +181,7 @@ aboutTl.from('.about__para', {
     scrub: 5,
     duration: 3
   },
-  "-=5"
+  "-=3"
   )
 
 const imgTl = gsap.timeline({});
