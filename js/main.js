@@ -1,36 +1,29 @@
-// import LocomotiveScroll from 'locomotive-scroll';
+gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
-gsap.registerPlugin(ScrollTrigger);
+// let container = document.querySelector('.smooth-scroll');
 
-/*
-   Locomotive Scroll
-*/
+// let height;
+// function setHeight() {
+//   height = container.clientHeight;
+//   document.body.style.height = height + "px";
+// }
+// ScrollTrigger.addEventListener("refreshInit", setHeight);
 
-const locoScroll = new LocomotiveScroll({
-  el: document.querySelector('.smooth-scroll'),
-  smooth: true
-});
-
-ScrollTrigger.scrollerProxy('.smooth-scroll', {
-  scrollTop(value) {
-    return arguments.length ?
-    locoScroll.scrollTo(value, 0, 0) :
-    locoScroll.scroll.instance.scroll.y;
-  },
-  getBoundingClientRect() {
-    return {top: 0, left: 0, width: window.innerWidth, height: window.innerHeight};
-  },
-
-  pinType: document.querySelector(".smooth-scroll").style.transform ? "transform" : "fixed"
-  }
-);
-
-locoScroll.on("scroll", ScrollTrigger.update);
-
-ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
-ScrollTrigger.refresh();
+// // smooth scrolling container
+// gsap.to(container, {
+//   y: () => -(height - document.documentElement.clientHeight),
+//   ease: "none",
+//   scrollTrigger: {
+//     trigger: document.body,
+//     start: "top top",
+//     end: "bottom bottom",
+//     scrub: 1,
+//     invalidateOnRefresh: true
+//   }
+// });
 
 // Gsap
+
 
 var tl = gsap.timeline({defaults:{duration: 1}   
   } 
@@ -43,19 +36,19 @@ gsap.from('.venmartin', {
   opacity: 0,
   ease: "back",
   // pinSpacing: false,
-  scroller: ".smooth-scroll",
+  // scroller: ".smooth-scroll",
   stagger: 0.35
 });
 
 
-tl.from('.hex__svg1', {
+gsap.from('.hex__svg1', {
   x: 450,
   duration: 1,
   opacity: 0,
   ease: "back",
   delay: 0.5,
 },
-"-=1.4")
+"-=1")
 
 
 ScrollTrigger.create({
@@ -66,7 +59,7 @@ ScrollTrigger.create({
   start: "top top",
   end: "+=1000",
   scrub: 1,
-  scroller: ".smooth-scroll",
+  // scroller: ".smooth-scroll",
   pinSpacing: true
   
 });
@@ -120,56 +113,77 @@ const aboutTl = gsap.timeline(
     // markers: true,
     trigger: "#about",
     pin: false,
-    start: "top bottom",
-    end: "top top",
+    start: "top top",
+    end: "bottom -120%",
     scrub: 5,
-    pinSpacing: true,
-    scroller: ".smooth-scroll"
+    // duration: 3,
+    // delay: 2,
+    // scrub: 5,
+    // pinSpacing: true,
+    // scroller: ".smooth-scroll"
   
   },
-    defaults: 
-    {
-      duration: 3,
-      delay: 2
-    }
+    // defaults: 
+    // {
+    //   duration: 3,
+    //   delay: 2
+    // }
   }
 );
 aboutTl.from('.block__line', {
   x: -450,
-  duration: 3,
-  delay: 5,
   opacity: 0,
   ease: "back",
+  pin: true,
+  scrub: true,
+  duration: 5
   // stagger: 3.5
 },
 "+=1");
 
 
 aboutTl.from('.about__para', {
-  // scrollTrigger: {
-  //   trigger: "#about",
-  //   pin: '#about',
-  //   start: "top 15%",
-  //   end: "-=500",
-  //   scrub: 3,
-  //   pinSpacing: true
-  // },
   y: -250,
-  duration: 3.5,
-  delay: 1.5,
   opacity: 0,
   ease: "back",
-  stagger: 3.5
-});
+  stagger: 0.5,
+  scrub: 5,
+  duration: 5
+},"+=1")
+  .to('.about__para', {
+    y: "-=250",
+    opacity: 0,
+    ease: 'back',
+    stagger: 1.5,
+    scrub: 5,
+    duration: 5
+  },
+  "+=1")
+
+  aboutTl.to('.block__line', {
+    y: -250,
+    opacity: 0,
+    scrub: 5,
+    duration: 3
+  })
+
+  aboutTl.to('.heading__text', {
+    y: -250,
+    opacity: 0,
+    scrub: 5,
+    duration: 3
+  },
+  "-=5"
+  )
 
 const imgTl = gsap.timeline({});
 
 ScrollTrigger.create({
   // markers: true,
   trigger: "#about",
-  start: "top top",
-  end: "+=3000",
-  scroller: ".smooth-scroll",
+  start: "top 4.5%",
+  end: "+=6300",
+  delay: 3.5,
   pin: true
 })
 
@@ -179,11 +193,11 @@ ScrollTrigger.create({
       delay: 1.5
     },
     animation: imgTl,
-    trigger: "#about",
-    start: "top top",
+    trigger: ".block__line",
+    start: "top -=2000",
     end: "+=3000",
-    scroller: ".smooth-scroll",
-    scrub: 1,
+    // scroller: ".smooth-scroll",
+    scrub: 4,
     pin: false,
     markers: true
 })
@@ -192,63 +206,150 @@ imgTl.from('.item__cen-right', {
   //   trigger: "#about",
   //   start: "top top",
   //   end: "bottom top",
-  //   scroller: ".smooth-scroll",
+    // scroller: ".smooth-scroll",
   //   scrub: 1,
   //   pin: false,
   //   markers: true
   // },
-  y: "+=200",
   duration: 3,
-  delay: 3.5,
+  delay: 5.5,
   opacity: 0,
   stagger: 3.5,
   scrub: true
 })
+  .from('.cen-right__text', {
+    x: "+=100%",
+    duration: 3,
+    opacity: 1,
+    scrub: 1,
+  },
+  "-=3")
+  .from('.family', {
+    x: "+=50%",
+    duration: 8,
+    opacity: 0,
+    scrub: 1,
+    ease: "back"
+  },
+  "+=1")  
   .to('.item__cen-right', {
-    y: "-=200",
+    // y: "-=200",
     duration: 3,
     opacity: 0,
     scrub: 1,
   })
+  .to('.cen-right__text', {
+    y: "-=200",
+    duration: 3,
+    opacity: 0,
+    scrub: 1,
+  },
+  "-=3") 
+  
+  
   .from('.item__right', {
-    y: "+=200",
     duration: 3,
     opacity: 0,
     stagger: 1.5,
     scrub: true
   })
+  .from('.right__text', {
+    x: "-=100%",
+    duration: 3,
+    opacity: 1,
+    scrub: 1,
+  },
+  "-=3")
+  .from('.learning', {
+    x: "-=50%",
+    duration: 8,
+    opacity: 0,
+    scrub: 1,
+    ease: "back"
+  },
+  "+=1")  
   .to('.item__right', {
-    y: "-=200",
     duration: 3,
     opacity: 0,
     scrub: 1,
   })
-  .from('.item__left', {
-    y: "+=200",
-    duration: 3,
-    opacity: 0,
-    stagger: 1.5,
-    scrub: true
-  })
-  .to('.item__left', {
+  .to('.right__text', {
     y: "-=200",
     duration: 3,
     opacity: 0,
     scrub: 1,
-  })
+  },
+  "-=3") 
+
+
   .from('.item__cen-left', {
-    y: "+=200",
     duration: 3,
     opacity: 0,
     stagger: 1.5,
     scrub: true
   })
+  .from('.cen-left__text', {
+    x: "+=100%",
+    duration: 3,
+    opacity: 1,
+    scrub: 1,
+  },
+  "-=3")
+  .from('.creative', {
+    x: "+=50%",
+    duration: 8,
+    opacity: 0,
+    scrub: 1,
+    ease: "back"
+  },
+  "+=1")  
   .to('.item__cen-left', {
-    y: "-=200",
     duration: 3,
     opacity: 0,
     scrub: 1,
   })
+  .to('.cen-left__text', {
+    y: "-=200",
+    duration: 3,
+    opacity: 0,
+    scrub: 1,
+  },
+  "-=3")
+  
+  
+  .from('.item__left', {
+    duration: 3,
+    opacity: 0,
+    stagger: 1.5,
+    scrub: true
+  })
+  .from('.left__text', {
+    x: "-=100%",
+    duration: 3,
+    opacity: 1,
+    scrub: 1,
+  },
+  "-=3")
+  .from('.football', {
+    x: "-=50%",
+    duration: 8,
+    opacity: 0,
+    scrub: 1,
+    ease: "back"
+  },
+  "+=1")  
+  .to('.item__left', {
+    duration: 3,
+    opacity: 0,
+    scrub: 1,
+  })
+  .to('.left__text', {
+    y: "-=200",
+    duration: 3,
+    opacity: 0,
+    scrub: 1,
+  },
+  "-=3")
 
 
 
