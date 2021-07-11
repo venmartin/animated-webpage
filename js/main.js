@@ -115,7 +115,7 @@ const aboutTl = gsap.timeline(
     pin: false,
     start: "top top",
     end: "bottom -120%",
-    scrub: 5,
+    scrub: 3,
     // duration: 3,
     // delay: 2,
     // scrub: 5,
@@ -169,17 +169,17 @@ aboutTl.from('.about__para', {
   "+=1")
 
   aboutTl.to('.block__line', {
-    y: -250,
+    x: -250,
     opacity: 0,
-    scrub: 5,
-    duration: 3
+    scrub: 2,
+    duration: 2
   })
 
   aboutTl.to('.heading__text', {
-    y: -250,
+    x: -250,
     opacity: 0,
-    scrub: 5,
-    duration: 3
+    scrub: 2,
+    duration: 2
   },
   "-=3"
   )
@@ -207,7 +207,7 @@ ScrollTrigger.create({
     // scroller: ".smooth-scroll",
     scrub: 4,
     pin: false,
-    markers: true
+    // markers: true
 })
 imgTl.from('.item__cen-right', {
   // scrollTrigger: {
@@ -359,7 +359,35 @@ imgTl.from('.item__cen-right', {
   },
   "-=3")
 
+// Gsap Project
 
+const projTl = gsap.timeline();
+
+ScrollTrigger.create({
+  // markers: true,
+  trigger: "#projects",
+  start: "top 4.5%",
+  end: "+=6300",
+  pin: true
+})
+
+projTl.from(".projects__heading", {
+  scrollTrigger: {
+    markers: true,
+    trigger: ".textbox__projects",
+    start: "top 400",
+    end: "bottom top",
+    scrub: 1
+  },
+  y: 400,
+  duration: 0.7,
+  ease: "power4",
+  
+})
+
+
+
+// Nav Intersecting Animation
 
 
 const navHeader = document.getElementById('nav-bar');
