@@ -1,4 +1,5 @@
-gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollToPlugin);
 
 // let container = document.querySelector('.smooth-scroll');
 
@@ -54,7 +55,7 @@ gsap.from('.hex__svg1', {
 ScrollTrigger.create({
   // markers: true,
   animation: tl,
-  trigger: ".landing",
+  trigger: "#landing__main",
   pin: true,
   start: "top top",
   end: "+=1000",
@@ -134,19 +135,16 @@ aboutTl.from('.block__line', {
   x: -450,
   opacity: 0,
   ease: "back",
-  pin: true,
-  scrub: true,
   duration: 5
   // stagger: 3.5
 },
 "+=1")
-  .from('.heading__text', {
+  .from('.about__heading', {
     x: -250,
     opacity: 0,
     ease: 'back',
     stagger: 0.5,
-    scrub: 5,
-    duration: 5
+      duration: 5
   })
 
 
@@ -155,7 +153,6 @@ aboutTl.from('.about__para', {
   opacity: 0,
   ease: "back",
   stagger: 0.5,
-  scrub: 5,
   duration: 5
 },"+=1")
   .to('.about__para', {
@@ -163,7 +160,6 @@ aboutTl.from('.about__para', {
     opacity: 0,
     ease: 'back',
     stagger: 1.5,
-    scrub: 5,
     duration: 5
   },
   "+=1")
@@ -171,14 +167,12 @@ aboutTl.from('.about__para', {
   aboutTl.to('.block__line', {
     x: -250,
     opacity: 0,
-    scrub: 2,
     duration: 2
   })
 
-  aboutTl.to('.heading__text', {
+  aboutTl.to('.about__heading', {
     x: -250,
     opacity: 0,
-    scrub: 2,
     duration: 2
   },
   "-=3"
@@ -223,20 +217,17 @@ imgTl.from('.item__cen-right', {
   delay: 5.5,
   opacity: 0,
   stagger: 3.5,
-  scrub: true
 })
   .from('.cen-right__text', {
     x: "+=100%",
     duration: 3,
     opacity: 1,
-    scrub: 1,
   },
   "-=3")
   .from('.family', {
     x: "+=50%",
     duration: 8,
     opacity: 0,
-    scrub: 1,
     ease: "back"
   },
   "+=1")  
@@ -244,13 +235,11 @@ imgTl.from('.item__cen-right', {
     // y: "-=200",
     duration: 3,
     opacity: 0,
-    scrub: 1,
   })
   .to('.cen-right__text', {
     y: "-=200",
     duration: 3,
     opacity: 0,
-    scrub: 1,
   },
   "-=3") 
   
@@ -259,33 +248,29 @@ imgTl.from('.item__cen-right', {
     duration: 3,
     opacity: 0,
     stagger: 1.5,
-    scrub: true
+    
   })
   .from('.right__text', {
     x: "-=100%",
     duration: 3,
     opacity: 1,
-    scrub: 1,
   },
   "-=3")
   .from('.learning', {
     x: "-=50%",
     duration: 8,
     opacity: 0,
-    scrub: 1,
     ease: "back"
   },
   "+=1")  
   .to('.item__right', {
     duration: 3,
     opacity: 0,
-    scrub: 1,
   })
   .to('.right__text', {
     y: "-=200",
     duration: 3,
     opacity: 0,
-    scrub: 1,
   },
   "-=3") 
 
@@ -294,33 +279,29 @@ imgTl.from('.item__cen-right', {
     duration: 3,
     opacity: 0,
     stagger: 1.5,
-    scrub: true
+    
   })
   .from('.cen-left__text', {
     x: "+=100%",
     duration: 3,
     opacity: 1,
-    scrub: 1,
   },
   "-=3")
   .from('.creative', {
     x: "+=50%",
     duration: 8,
     opacity: 0,
-    scrub: 1,
     ease: "back"
   },
   "+=1")  
   .to('.item__cen-left', {
     duration: 3,
     opacity: 0,
-    scrub: 1,
   })
   .to('.cen-left__text', {
     y: "-=200",
     duration: 3,
     opacity: 0,
-    scrub: 1,
   },
   "-=3")
   
@@ -329,33 +310,29 @@ imgTl.from('.item__cen-right', {
     duration: 3,
     opacity: 0,
     stagger: 1.5,
-    scrub: true
+    
   })
   .from('.left__text', {
     x: "-=100%",
     duration: 3,
     opacity: 1,
-    scrub: 1,
   },
   "-=3")
   .from('.football', {
     x: "-=50%",
     duration: 8,
     opacity: 0,
-    scrub: 1,
     ease: "back"
   },
   "+=1")  
   .to('.item__left', {
     duration: 3,
     opacity: 0,
-    scrub: 1,
   })
   .to('.left__text', {
     y: "-=200",
     duration: 3,
     opacity: 0,
-    scrub: 1,
   },
   "-=3")
 
@@ -367,22 +344,39 @@ ScrollTrigger.create({
   // markers: true,
   trigger: "#projects",
   start: "top 4.5%",
-  end: "+=6300",
+  end: "+=1300",
   pin: true
 })
 
 projTl.from(".projects__heading", {
   scrollTrigger: {
-    markers: true,
+    // markers: true,
     trigger: ".textbox__projects",
-    start: "top 400",
+    start: "top 500",
     end: "bottom top",
     scrub: 1
   },
   y: 400,
   duration: 0.7,
   ease: "power4",
+})
   
+  projTl.from('.project', {
+    scrollTrigger: {
+      markers: true,
+      trigger: ".textbox__projects",
+      start: 'top top',
+      end: '+=1000',
+      scrub: 1,
+    },
+    x: -450,
+    skewX: 10,
+    skewY: 40,
+    // y: 250,
+    opacity: 0,
+    stagger: 2,
+    duration: 2,
+    ease: 'power4'
 })
 
 
