@@ -116,7 +116,7 @@ const aboutTl = gsap.timeline(
     trigger: "#about",
     pin: false,
     start: "top top",
-    end: "bottom -120%",
+    end: "bottom bottom",
     scrub: 3,
     // duration: 3,
     // delay: 2,
