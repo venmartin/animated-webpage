@@ -644,7 +644,7 @@
     /* width: 20%; */
     max-width: 30rem;
     min-width: 25rem;
-    margin-bottom: 5rem;
+    /* margin-bottom: rem; */
     justify-content: flex-start;
     align-items: center;
   }

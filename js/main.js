@@ -26,10 +26,6 @@ gsap.registerPlugin(ScrollToPlugin);
 // Gsap
 
 
-ScrollTrigger.config({
-  autoRefreshEvents: "visibilitychange,DOMContentLoaded,load"
-});
-
 var tl = gsap.timeline({defaults:{duration: 1}   
   } 
 );
@@ -350,7 +346,7 @@ ScrollTrigger.create({
   // markers: true,
   trigger: "#projects",
   start: "top top",
-  end: "+=1500",
+  end: "+=2000",
   pin: true
 })
 
@@ -423,3 +419,6 @@ const sectionMainObserver = new IntersectionObserver(function(entries, sectionMa
 
 sectionMainObserver.observe(sectionMain);
 
+// ScrollTrigger.config({
+//   autoRefreshEvents: "visibilitychange,DOMContentLoaded,load"
+// });

@@ -259,7 +259,7 @@
 
   .box__heading {
     font-size: clamp(10px, 1vw + 1em, 2rem);
-    writing-mode: vertical-rl;
+    writing-mode:sideways-lr;
     margin-right: 1rem;
   }
 
