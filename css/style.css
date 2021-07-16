@@ -1,4 +1,4 @@
-/* @media screen and (min-width: 900px) { */
+
   * {
   
     margin: 0;
@@ -6,6 +6,11 @@
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
     color: var(--text-color);
+  }
+
+  *::before,
+  *::after {
+    box-sizing: border-box;
   }
   
   :root {
@@ -16,8 +21,8 @@
     --overlay-tint: rgba(0, 32, 58, 0.774);
     --block-line: rgb(20,20,20);
     --cream: rgba(230,230,220);
-    height: 100%;
-    scroll-behavior: smooth;
+    /* height: 100%; */
+    /* scroll-behavior: smooth; */
   
   }
   
@@ -34,6 +39,7 @@
       var(--overlay-tint),
       rgba(0, 32, 58)),
       url("/img/hexbg2.jpg");
+      -webkit-overflow-scrolling:touch;
   }
  
  
@@ -86,6 +92,7 @@
   
   }
   
+  
   .nav-list li {
     margin-right: 2rem;
     margin-left: 2rem;
@@ -136,6 +143,7 @@
   section {
     height: 100vh;
     width: 100vw;
+    overflow-x: hidden;
   }
   
   #about {
@@ -143,8 +151,9 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 0;
+    margin-top: 100px;
     padding: 0;
+    
     /* background-position:center center;
     background-attachment: fixed;
     background-repeat: no-repeat;
@@ -179,10 +188,10 @@
     justify-content: center;
   }
   
-  .sticky__bg {
+  /* .sticky__bg {
     position: fixed;
     height: 120vh;
-    width: 100vw;  
+    width: 100vw;   */
       /* background-attachment: fixed;
       background-position: center;
       background-repeat: no-repeat;
@@ -192,7 +201,7 @@
         var(--overlay-tint),
         var(--overlay-tint)),
         url("/img/hexbg.jpg"); */
-  }
+  /* } */
   
   
   .venmartin {
@@ -651,7 +660,6 @@
     display: flex;
     justify-content: center;
     align-items: top;
-    
   }
 
   .project {
@@ -661,13 +669,12 @@
     padding: 50px;
     margin-left: clamp(1vw, 1vw + 1rem, 5rem);
     margin-right: clamp(1vw, 1vw + 1rem, 5rem);
-    width: 30%;
-    max-width: 50rem;
+    /* width: 20%; */
+    max-width: 30rem;
     min-width: 25rem;
     margin-bottom: 5rem;
     justify-content: flex-start;
     align-items: center;
-    width: 100%;
   }
 
   .number {
@@ -690,7 +697,6 @@
     font-size: 1rem;
     font-weight: 700;
     margin: auto;
-    margin-bottom: 0px;
     background-color: var(--cream);
     outline: none;
     border: none;

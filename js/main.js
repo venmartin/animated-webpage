@@ -26,9 +26,26 @@ gsap.registerPlugin(ScrollToPlugin);
 // Gsap
 
 
+ScrollTrigger.config({
+  autoRefreshEvents: "visibilitychange,DOMContentLoaded,load"
+});
+
 var tl = gsap.timeline({defaults:{duration: 1}   
   } 
 );
+ScrollTrigger.create({
+  // markers: true,
+  animation: tl,
+  trigger: "#landing__main",
+  pin: true,
+  start: "top 50px",
+  end: "+=1000",
+  delay: 1,
+  scrub: 1,
+  // scroller: ".smooth-scroll",
+  pinSpacing: true
+  
+});
 
 gsap.from('.venmartin', {
   x: -450,
@@ -52,18 +69,6 @@ gsap.from('.hex__svg1', {
 "-=1")
 
 
-ScrollTrigger.create({
-  // markers: true,
-  animation: tl,
-  trigger: "#landing__main",
-  pin: true,
-  start: "top top",
-  end: "+=1000",
-  scrub: 1,
-  // scroller: ".smooth-scroll",
-  pinSpacing: true
-  
-});
 
 tl.from('.block4', {
   x: -450,
@@ -183,7 +188,7 @@ const imgTl = gsap.timeline({});
 ScrollTrigger.create({
   // markers: true,
   trigger: "#about",
-  start: "top 4.5%",
+  start: "top 100px",
   end: "+=6300",
   delay: 3.5,
   pin: true
@@ -217,6 +222,7 @@ imgTl.from('.item__cen-right', {
   delay: 5.5,
   opacity: 0,
   stagger: 3.5,
+
 })
   .from('.cen-right__text', {
     x: "+=100%",
@@ -343,16 +349,16 @@ const projTl = gsap.timeline();
 ScrollTrigger.create({
   // markers: true,
   trigger: "#projects",
-  start: "top 4.5%",
-  end: "+=1300",
+  start: "top top",
+  end: "+=1500",
   pin: true
 })
 
 projTl.from(".projects__heading", {
   scrollTrigger: {
-    // markers: true,
-    trigger: ".textbox__projects",
-    start: "top 500",
+    markers: true,
+    trigger: "#projects",
+    start: "top top",
     end: "bottom top",
     scrub: 1
   },
@@ -364,15 +370,14 @@ projTl.from(".projects__heading", {
   projTl.from('.project', {
     scrollTrigger: {
       markers: true,
-      trigger: ".textbox__projects",
-      start: 'top top',
+      trigger: ".projects__heading",
+      start: 'top -=300px',
       end: '+=1000',
       scrub: 1,
     },
     x: -450,
     skewX: 10,
     skewY: 40,
-    // y: 250,
     opacity: 0,
     stagger: 2,
     duration: 2,
@@ -386,6 +391,14 @@ projTl.from(".projects__heading", {
 
 const navHeader = document.getElementById('nav-bar');
 const sectionMain = document.getElementById('landing__main');
+const navListSmall = document.querySelector('.nav-list');
+const burger = document.querySelectorAll('.burger');
+const menuBtn = document.querySelector('.menu__btn');
+
+menuBtn.addEventListener('click', function() {
+  navListSmall.classList.toggle('nav-list__popout');
+});
+
 const sectionMainOptions = {
   rootMargin: "-80% 0% 0% 0%"
  };
@@ -394,10 +407,19 @@ const sectionMainObserver = new IntersectionObserver(function(entries, sectionMa
   entries.forEach(entry => {
     if(!entry.isIntersecting) {
       navHeader.classList.add('nav__scroll');
+      navListSmall.classList.add('nav-list__adjust');
+      burger.forEach(function(burger){
+        burger.classList.add('burger__black');
+      })
     } else {
       navHeader.classList.remove('nav__scroll');
+      navListSmall.classList.remove('nav-list__adjust');
+      burger.forEach(function(burger){
+        burger.classList.remove('burger__black');
+      })
     }
   })
 }, sectionMainOptions)
 
 sectionMainObserver.observe(sectionMain);
+
