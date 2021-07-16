@@ -153,20 +153,13 @@
     align-items: center;
     margin-top: 100px;
     padding: 0;
-    
-    /* background-position:center center;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-image: url("../img/livingroom.jpg");
-    width: 100%;
-    height: 100%; */
   }
   
   #projects {
     margin: 0;
     padding: 0;
     background-color: var(--cream);
+    overflow-y: hidden;
   }
   
   #contact {
@@ -187,30 +180,12 @@
     align-items: flex-start;
     justify-content: center;
   }
-  
-  /* .sticky__bg {
-    position: fixed;
-    height: 120vh;
-    width: 100vw;   */
-      /* background-attachment: fixed;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-image:
-      linear-gradient(
-        var(--overlay-tint),
-        var(--overlay-tint)),
-        url("/img/hexbg.jpg"); */
-  /* } */
-  
-  
+    
   .venmartin {
     display: inline-block;
-    /* font-size: 9.375rem;  */
     font-size: clamp(1.85rem, 7vw, 9.375rem);
     font-weight: 700;
     letter-spacing: clamp(1.5rem, 7vw, 6rem);
-    /* width: 100%; */
     text-align: left;
     margin-top: 0%;
     margin-left: -15px;
@@ -366,7 +341,7 @@
     height: 5%;
     width: 35%;
     background-color: var(--block-line);
-    color: black;
+    color: var(--block-line);
     border: 10px;
   }
   
@@ -422,14 +397,12 @@
     align-items: flex-end;
     color: rgb(255,255,255);
     font-size: clamp(1rem, 1vw + .5rem, 3.125rem);
-    margin-right: 2%;
+    margin-right: 1em;
   
   }
   
   
   .item__cen-right {
-    /* height: 26rem; */
-    /* width: 22.5rem; */
     position: fixed;
     width: clamp(20rem, 20vw + .5rem, 90rem);
     left: 0px;
@@ -536,7 +509,6 @@
     display:block;
     position: fixed;
     background-position:center center;
-    /* background-attachment: fixed; */
     background-repeat: no-repeat;
     background-size: cover;
     background-image: url("../img/livingroom.jpg");
@@ -687,7 +659,7 @@
   }
 
   .description {
-    font-size: clamp(0.7rem, 2vw, 1.3rem);
+    font-size: clamp(0.8rem, 2vw, 1.3rem);
     margin: 1.5rem 0rem 1.5rem 0rem;
   }
 

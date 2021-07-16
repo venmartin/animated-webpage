@@ -38,7 +38,7 @@ ScrollTrigger.create({
   animation: tl,
   trigger: "#landing__main",
   pin: true,
-  start: "top 50px",
+  start: "top top",
   end: "+=1000",
   delay: 1,
   scrub: 1,
