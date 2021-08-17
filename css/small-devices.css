@@ -13,11 +13,13 @@
   }
   
   :root {
-    --text-color: rgb(255, 255, 255);
+    --text-color--white: rgb(255, 255, 255);
+    --text-color-primary: rgb(0, 32, 58);
     --nav-background-color: rgb(231, 231, 226);
     --div-margin: 1rem;
     --div-padding: 1rem;
     --overlay-tint: rgba(0, 32, 58, 0.774);
+    --overlay-cream-tint: rgba(230,230,220,0.774);
     --block-line: rgb(20,20,20);
     --cream: rgba(230,230,220);
     height: 100%;
@@ -45,12 +47,12 @@
     position: relative;
     padding: 2px;
     left: -60px;
-    bottom: -20px;
+    bottom: -15px;
   }
 
   .burger {
     display: block;
-    background-color: rgb(255, 255, 255);
+    background-color: var(--text-color-primary);
     height: 2px;
     width: 25px;
     margin: 5px;
@@ -58,12 +60,15 @@
   }
 
   .burger__black {
-    background-color: rgb(20,20,20);
+    background-color: var(--text-color-primary);
+  }
+
+  .nav__scroll span {
+    background-color: var(--cream);
   }
 
   .nav-list {
     position: absolute;
-    background-color: rgba(0, 32, 58, 0.774);
     height: 400px;
     width: 200px;
     left: -20px;
@@ -76,7 +81,12 @@
 
   .nav-list__adjust {
     top: 80px;
-    background-color: var(--nav-background-color);
+    background-color: var(--text-color-primary);
+    
+  }
+
+  .nav-list__adjust a {
+    color: var(--cream);
   }
   
   .nav-list__popout {
@@ -85,8 +95,9 @@
   }
 
   .nav-list li {
-    margin-right: 1.5rem;
-    margin-left: 1.5rem;
+    margin-right: 1rem;
+    margin-left: 1rem;
+    
   }
   
   /*
@@ -97,6 +108,9 @@
     margin-top: 15%;
   }
   
+  .block__line {
+    width: 60%;
+  }
   .about__para__container {
     display: flex;
     flex-direction: column;
@@ -178,7 +192,7 @@
   .project {
       display: flex;
       flex-wrap: nowrap;
-      background-color: rgba(20, 20, 20, 0.950);
+      background-color: rgba(0, 32, 55, 0.950);
       padding: 30px;
       margin-left: auto;
       margin-right: auto;

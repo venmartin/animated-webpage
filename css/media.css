@@ -1,33 +1,47 @@
   @media only screen and (min-width: 1000px) and (max-width: 1650px) {
     .project__list__wrapper {
       flex-direction: row;
-      flex-wrap: wrap;
-      
+      flex-wrap: nowrap;
+      width: 80%;
+      margin: auto;
+      align-items: center;
+      justify-content: center;
 
     }
     
     .project {
-      width: 90%;
+      display: flex;
       flex-wrap: wrap;
-      /* margin: 2rem; */
+      margin: 1rem;
       padding: 2rem;
       transition: 0.5s;
+      height: 300px;
     }
 
     .number {
-      width: auto;
-      margin-right: 1rem;
+      width: 30%;
+      margin-right: auto;
+      font-size: clamp(3rem, 1vw + 1.5rem, 3rem);
     }
 
     .box__heading {
-      font-size: clamp(20px, 1vw + 1rem, 2rem);
-      margin-left: 0px;
+      font-size: clamp(.7rem, 1vw + .5rem, 2rem);
+      width: 70%;
+      margin-left: auto;
       padding: 1rem;
       
     }
 
     .description {
-      font-size: clamp(0.7rem, 2vw, 1rem);
+      font-size: clamp(0.7rem, 1vw, 1rem);
+      max-width: 70%;
+    }
+
+    .demo {
+      padding: 0.7rem;
+      font-size: 0.7rem;
+      margin: auto;
+      
     }
 
   }

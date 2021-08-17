@@ -24,7 +24,20 @@ gsap.registerPlugin(ScrollToPlugin);
 // });
 
 // Gsap
+const pageSize = document.getElementsByTagName('HTML')[0].outerHTML.length;
+const pageWrap =  document.querySelector('.page-wrap');
 
+gsap.from('.progress-bar', {
+  scrollTrigger: {
+    trigger: ".page-wrap",
+    scrub: 1,
+    start: "top top",
+    end: pageSize + "+=1800"
+  },
+  scaleX: 0,
+  transformOrigin: "left center",
+  ease: "none"
+})
 
 var tl = gsap.timeline({defaults:{duration: 1}   
   } 
@@ -35,7 +48,7 @@ ScrollTrigger.create({
   trigger: "#landing__main",
   pin: true,
   start: "top top",
-  end: "+=1000",
+  end: "+=1800",
   delay: 1,
   scrub: 1,
   // scroller: ".smooth-scroll",
@@ -109,6 +122,8 @@ tl.from('.intro__roll', {
 })
 
 
+// About Section
+
 const aboutTl = gsap.timeline(
   {
   scrollTrigger: {
@@ -116,10 +131,10 @@ const aboutTl = gsap.timeline(
     trigger: "#about",
     pin: false,
     start: "top top",
-    end: "bottom bottom",
+    end: "bottom -=1200",
     scrub: 3,
-    // duration: 3,
-    // delay: 2,
+    duration: 3,
+    delay: 2,
     // scrub: 5,
     // pinSpacing: true,
     // scroller: ".smooth-scroll"
@@ -205,15 +220,6 @@ ScrollTrigger.create({
     // markers: true
 })
 imgTl.from('.item__cen-right', {
-  // scrollTrigger: {
-  //   trigger: "#about",
-  //   start: "top top",
-  //   end: "bottom top",
-    // scroller: ".smooth-scroll",
-  //   scrub: 1,
-  //   pin: false,
-  //   markers: true
-  // },
   duration: 3,
   delay: 5.5,
   opacity: 0,
@@ -390,6 +396,8 @@ const sectionMain = document.getElementById('landing__main');
 const navListSmall = document.querySelector('.nav-list');
 const burger = document.querySelectorAll('.burger');
 const menuBtn = document.querySelector('.menu__btn');
+const progressBar = document.querySelector('.progress-bar');
+const rectShape = document.querySelectorAll('.rect__shape');
 
 menuBtn.addEventListener('click', function() {
   navListSmall.classList.toggle('nav-list__popout');
@@ -407,12 +415,20 @@ const sectionMainObserver = new IntersectionObserver(function(entries, sectionMa
       burger.forEach(function(burger){
         burger.classList.add('burger__black');
       })
+      progressBar.classList.add('progress-bar-alt');
+      rectShape.forEach(function(rectShape){
+        rectShape.classList.add('rect__shape-scroll');
+      })
     } else {
       navHeader.classList.remove('nav__scroll');
       navListSmall.classList.remove('nav-list__adjust');
+      progressBar.classList.remove('progress-bar-alt');
       burger.forEach(function(burger){
-        burger.classList.remove('burger__black');
-      })
+      burger.classList.remove('burger__black');
+    })
+      rectShape.forEach(function(rectShape){
+      rectShape.classList.remove('rect__shape-scroll');
+    })
     }
   })
 }, sectionMainOptions)
