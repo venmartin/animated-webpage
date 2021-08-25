@@ -122,13 +122,13 @@ tl.from('.intro__roll', {
 })
 
 
-// About Section
+// overview Section
 
-const aboutTl = gsap.timeline(
+const overviewTl = gsap.timeline(
   {
   scrollTrigger: {
     // markers: true,
-    trigger: "#about",
+    trigger: "#overview",
     pin: false,
     start: "top top",
     end: "bottom -=1200",
@@ -147,7 +147,7 @@ const aboutTl = gsap.timeline(
     // }
   }
 );
-aboutTl.from('.block__line', {
+overviewTl.from('.block__line', {
   x: -450,
   opacity: 0,
   ease: "back",
@@ -155,7 +155,7 @@ aboutTl.from('.block__line', {
   // stagger: 3.5
 },
 "+=1")
-  .from('.about__heading', {
+  .from('.overview__heading', {
     x: -250,
     opacity: 0,
     ease: 'back',
@@ -164,14 +164,14 @@ aboutTl.from('.block__line', {
   })
 
 
-aboutTl.from('.about__para', {
+overviewTl.from('.overview__para', {
   y: -250,
   opacity: 0,
   ease: "back",
   stagger: 0.5,
   duration: 5
 },"+=1")
-  .to('.about__para', {
+  .to('.overview__para', {
     y: "-=250",
     opacity: 0,
     ease: 'back',
@@ -180,13 +180,13 @@ aboutTl.from('.about__para', {
   },
   "+=1")
 
-  aboutTl.to('.block__line', {
+  overviewTl.to('.block__line', {
     x: -250,
     opacity: 0,
     duration: 2
   })
 
-  aboutTl.to('.about__heading', {
+  overviewTl.to('.overview__heading', {
     x: -250,
     opacity: 0,
     duration: 2
@@ -198,7 +198,7 @@ const imgTl = gsap.timeline({});
 
 ScrollTrigger.create({
   // markers: true,
-  trigger: "#about",
+  trigger: "#overview",
   start: "top 100px",
   end: "+=6300",
   delay: 3.5,
@@ -386,6 +386,30 @@ projTl.from(".projects__heading", {
     ease: 'power4'
 })
 
+
+// Gsap Story
+
+const storyTl = gsap.timeline();
+
+ScrollTrigger.create({
+  trigger: "#story",
+  start: "top top",
+  end: "+=2000",
+  pin: true
+})
+
+storyTl.from('.my__story', {
+  scrollTrigger: {
+    // markers: true,
+    trigger: "#story",
+    start: "top top",
+    end: "bottom top",
+    scrub: 1,
+  },
+  y: 400,
+  duration: 0.7,
+  ease: "power4",
+})
 
 
 // Nav Intersecting Animation

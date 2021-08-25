@@ -137,8 +137,8 @@
     text-transform: uppercase;
     padding: 10px 20px 10px 20px;
   }
-  
-  .svg__wrapper {
+
+ .svg__wrapper {
     position: relative;
     transform: translateY(25%);
     margin: 0 auto;
@@ -196,7 +196,7 @@
     overflow-x: hidden;
   }
   
-  #about {
+  #overview {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -212,7 +212,7 @@
     overflow-y: hidden;
   }
   
-  #contact {
+  #story {
     margin: 0;
     padding: 0;
     background:
@@ -374,10 +374,10 @@
   }
   
   /*
-  --- About
+  --- Overview
   */
   
-  .about__container {
+  .overview__container {
     margin-top: 5%;
     height: 100%;
     width: 100%;
@@ -403,7 +403,7 @@
     border: 10px;
   }
   
-  .about__heading {
+  .overview__heading {
     position: relative;
     bottom: 2rem;
     margin-left: 20%;
@@ -414,14 +414,14 @@
     
   }
   
-  .about__para__container {
+  .overview__para__container {
     display: flex;
     flex-direction: column;
     width: 50%;
     overflow: hidden;
   }
   
-  .about__para {
+  .overview__para {
     margin-left: 5%;
     margin-bottom: 5%;
     width: 65%;
@@ -568,7 +568,7 @@
   
   }
   
-  .bg__about {
+  .bg__overview {
     display:block;
     position: fixed;
     background-position:center center;
@@ -742,6 +742,41 @@
 
 
 
- /* Contact */
+ /* Story */
 
 
+ .textbox__story {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 2rem;
+  width: 100%;
+  background-color: var(--cream);
+  overflow: hidden;
+ }
+
+ .my__story {
+  font-family: 'Questrial', sans-serif;
+  font-size: clamp(170px, 12vw + 5em, 15rem);
+  letter-spacing: -1.5rem;
+  color: var(--text-color-primary);
+  margin-top: 100px;
+ }
+
+
+ .story__container {
+   display: flex;
+   width: 90%;
+   margin: auto;
+ }
+
+ .story__para {
+   width: 100%;
+   padding: 1rem;
+
+ }
+
+ .storybox {
+   font-size: 1.4rem;
+   width: 50%;
+ }
