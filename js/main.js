@@ -358,7 +358,7 @@ ScrollTrigger.create({
 
 projTl.from(".projects__heading", {
   scrollTrigger: {
-    markers: true,
+    // markers: true,
     trigger: "#projects",
     start: "top top",
     end: "bottom top",
@@ -371,7 +371,7 @@ projTl.from(".projects__heading", {
   
   projTl.from('.project', {
     scrollTrigger: {
-      markers: true,
+      // markers: true,
       trigger: ".projects__heading",
       start: 'top -=300px',
       end: '+=1000',
@@ -391,19 +391,19 @@ projTl.from(".projects__heading", {
 
 const storyTl = gsap.timeline();
 
-ScrollTrigger.create({
-  trigger: "#story",
-  start: "top top",
-  end: "+=2000",
-  pin: true
-})
+// ScrollTrigger.create({
+//   trigger: "#story",
+//   start: "top top",
+//   end: "+=2000",
+//   pin: true
+// })
 
 storyTl.from('.my__story', {
   scrollTrigger: {
-    // markers: true,
+    markers: true,
     trigger: "#story",
-    start: "top top",
-    end: "bottom top",
+    start: "top 700",
+    end: '+=700',
     scrub: 1,
   },
   y: 400,

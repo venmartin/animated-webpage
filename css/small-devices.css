@@ -101,7 +101,7 @@
   }
   
   /*
-  --- About
+  --- Overview
   */
   
   .title__container {
@@ -111,7 +111,7 @@
   .block__line {
     width: 60%;
   }
-  .about__para__container {
+  .overview__para__container {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -120,7 +120,7 @@
     
   }
   
-  .about__para {
+  .overview__para {
     width: 70%;
     overflow: hidden;
   }
