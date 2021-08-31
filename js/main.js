@@ -412,7 +412,7 @@ storyTl.from('.my__story', {
 })
 
 
-// Nav Intersecting Animation
+// Nav Intersecting Animation 
 
 
 const navHeader = document.getElementById('nav-bar');
