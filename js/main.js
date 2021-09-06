@@ -391,22 +391,39 @@ projTl.from(".projects__heading", {
 
 const storyTl = gsap.timeline();
 
-// ScrollTrigger.create({
-//   trigger: "#story",
-//   start: "top top",
-//   end: "+=2000",
-//   pin: true
-// })
+ScrollTrigger.create({
+  markers: true,
+  trigger: "#story",
+  start: "top top",
+  end: "+=2200",
+  pin: true
+})
 
 storyTl.from('.my__story', {
   scrollTrigger: {
-    markers: true,
+    // markers: true,
     trigger: "#story",
-    start: "top 700",
+    start: "top 200",
     end: '+=700',
     scrub: 1,
+    // pin: true
   },
   y: 400,
+  duration: 0.7,
+  ease: "power4",
+})
+
+storyTl.from('.story__container', {
+  scrollTrigger: {
+    // markers: true,
+    trigger: "#story",
+    start: "top top",
+    end: 'bottom top',
+    stagger: 2,
+    scrub: 1,
+    // pin: true
+  },
+  y: 800,
   duration: 0.7,
   ease: "power4",
 })
