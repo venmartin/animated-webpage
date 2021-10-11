@@ -785,3 +785,34 @@
    font-size: 1.4rem;
    width: 100%;
  }
+
+ .break {
+    position: relative;
+    height: 10vh;
+    width: 100%;
+    background-color: var(--text-color-primary);
+    
+ }
+
+ #to_top {
+   border: none;
+   outline: none;
+   background: none;
+   margin: 0;
+   position: absolute;
+   padding: 5px;
+   top: 50%;
+   left: 50%;
+   -ms-transform: translateY(-50%);
+   transform: translateY(-50%);
+   transition: 0.5s;
+   cursor: pointer;
+ }
+
+ #to_top:hover {
+   background-color: var(--overlay-cream-tint);
+   transition: 0.5s;
+   border: 1px;
+   border-radius: 35px;
+
+ }

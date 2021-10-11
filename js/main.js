@@ -32,7 +32,7 @@ gsap.from('.progress-bar', {
     trigger: ".page-wrap",
     scrub: 1,
     start: "top top",
-    end: pageSize + "+=1800"
+    end: pageSize + "-=500"
   },
   scaleX: 0,
   transformOrigin: "left center",
@@ -395,7 +395,7 @@ ScrollTrigger.create({
   markers: true,
   trigger: "#story",
   start: "top top",
-  end: "+=2200",
+  end: "+=600",
   pin: true
 })
 
@@ -477,6 +477,15 @@ const sectionMainObserver = new IntersectionObserver(function(entries, sectionMa
 }, sectionMainOptions)
 
 sectionMainObserver.observe(sectionMain);
+
+
+// Scroll to top
+
+let topBtn = document.getElementById('to_top');
+
+function topFunc () {
+  document.documentElement.scrollTop = 0;
+}
 
 // ScrollTrigger.config({
 //   autoRefreshEvents: "visibilitychange,DOMContentLoaded,load"
